@@ -1,0 +1,148 @@
+.main-header-wrapper {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    filter: drop-shadow(0px 0px 10px #f0f0f0);
+}
+
+.main-header {
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-search {
+    width: 28%;
+    height: 47px;
+    background-color: #ffffff;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #DCDCDC;
+}
+
+.header-search .search-btn {
+    height: 30px;
+    width: 40px;
+}
+
+.purchase-notification{
+    position: absolute;
+    top: 80px;
+    width: -webkit-fill-available;
+    background-color: #626262;
+    color: white;
+    font-size: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 60%;
+    font-size: 20px;
+    border: 2px solid #ffffff;
+}
+
+.close-notification{
+    background: #fff;
+    color: green;
+    border-radius: 8px;
+    border: 2px solid green;
+    padding: 7px;
+    width: 40px;
+}
+
+.right-end {
+    display: flex;
+    align-items: center;
+}
+
+.right-end :last-child {
+    margin: 10px;
+}
+
+.left-end {
+    display: flex;
+    align-items: center;
+}
+
+.left-end :last-child {
+    margin: 10px;
+}
+
+.logo-img {
+    width: 150px;
+    height: 65px;
+    object-fit: cover;
+}
+
+.nav-override-color {
+    color: #4f4f4f !important;
+}
+
+.nav-btn {
+    min-height: 40px;
+}
+
+.explore {
+    padding: 10px 20px 10px;
+    align-self: center;
+    background-color: #62cb66;
+    color: #fff !important;
+    border-radius: 3em;
+}
+
+.header-buy {
+    cursor: pointer;
+    padding: 10px 30px 10px;
+    background-color: #62cb66;
+    color: #fff !important;
+    border-radius: 0px;
+    font-size: x-large;
+    font-family: 'Varela Round', sans-serif;
+    max-width: 250px;
+    position: fixed;
+    justify-self: flex-end;
+    align-self: flex-end;
+    top: 70px;
+    z-index: 3;
+    border:10px solid #ffffff;
+    filter: drop-shadow(0px 10px 10px #f0f0f0);
+
+}
+
+.header-none {
+    display: none;
+}
+
+@media(max-width: 540px) {
+
+    .main-header {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       height: auto;
+    }
+
+    .logo{
+        height: 100px;
+    }
+
+.main-header-wrapper {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    filter: drop-shadow(0px 0px 10px #f0f0f0);
+}
+.header-search{
+    width:95%;
+}
+
+}

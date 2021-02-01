@@ -1,0 +1,178 @@
+.main-details-card {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1120px;
+  margin-top: 85px;
+
+  .image-gallery {
+    margin: 2rem 0 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8px;
+    grid-auto-flow: dense;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img:first-child {
+      height: 555px;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .gallery__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  
+  }
+
+  .det-name {
+    padding-top: 1rem;
+    color: #323232;
+    font-family: "Varela Round";
+    border-bottom: 1px solid black;
+  }
+}
+
+.main-info-container {
+  background-color: #ffffff;
+  z-index: 0;
+  &hr {
+    border: 3px solid black;
+    color: black;
+  }
+}
+
+.main-info-card {
+  flex-grow: 4;
+  min-height: rem(500px);
+}
+
+.right-payment-area {
+  color: #4c4c4c;
+  flex-grow: 3;
+  margin-left: 1rem;
+
+  &.right-payment-area button {
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    background-color: $clr3;
+  }
+}
+.payment-det {
+  background-color: #fff;
+  min-height: rem(270px);
+  border: 1px solid #4c4c4c;
+  border-radius: 8px;
+  box-shadow: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.lower-info-area {
+  flex-grow: 2;
+  min-height: rem(300px);
+  background-color: $clr1;
+  margin-bottom: rem(50px);
+}
+
+.prefs {
+  flex-grow: 5;
+  border-bottom: 1px solid black;
+  color: #323232;
+}
+
+.fitchers-info {
+  background-color: $clr1;
+  flex-grow: 3;
+  margin-left: 1rem;
+
+  & > * {
+    background-color: orange;
+    height: 250px;
+    width: 250px;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+
+.attendings {
+  margin-top: 35px;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  min-height: rem(150px);
+  background-color: #ffffff;
+  padding-top: 20px;
+}
+
+.attending-img {
+  max-width: 35px;
+  max-height: 35px;
+  border-radius: 50px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.sold-out-btn {
+  background-color: #fbff00;
+  border-radius: 10px;
+  border: 1px solid #dda938;
+  color: #000000;
+  height: 50px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: x-large;
+  font-family: "Varela Round", sans-serif;
+  cursor: not-allowed;
+}
+
+//Reviews:
+
+.review-container {
+  margin-top: rem(70px);
+  background-color: rgba(255, 255, 255, 0.952);
+  margin-bottom: rem(50px);
+}
+
+.review-add {
+  padding: 10px 7px 20px 15px;
+  margin-bottom: rem(40px);
+  border: 0.3px solid #43c155;
+  border-radius: 4px;
+}
+
+.review-rate {
+  height: rem(45px);
+}
+.MuiBox-root-2 {
+  margin: 0;
+}
+
+.p-rate {
+  margin-top: 6px;
+  font-weight: 500;
+}
+.rev-txt {
+  padding: 0 0 rem(10px) rem(50px);
+  border-bottom: 1px solid #ccc;
+  margin-bottom: rem(10px);
+}
+
+.review-input {
+  width: 93%;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #909090;
+  margin-top: 10px;
+  font-size: 14pt;
+}

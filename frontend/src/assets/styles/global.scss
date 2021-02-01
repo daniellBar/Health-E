@@ -1,0 +1,36 @@
+// Setup
+@import "setup/variables.scss";
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+@import "setup/typography.scss";
+
+// Basics
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+@import "basics/ui.scss";
+
+// Components
+
+// Activity
+@import "components/activity.scss";
+@import "components/activity_preview.scss";
+@import "components/activity_details.scss";
+
+// Home
+@import "components/articles.scss";
+@import "components/jumbo.scss";
+
+//User
+@import "components/user_profile.scss";
+@import "components/dashboard.scss";
+
+// rest
+@import "components/main_header.scss";
+@import "components/footer.scss";
+@import "components/form-edit.scss";
+@import "components/about.scss";
+@import "components/signup.scss";
+
+
+

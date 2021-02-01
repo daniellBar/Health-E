@@ -1,0 +1,141 @@
+.jumbo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 91vh;
+    background-image: url(../../img/jumbo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom: 90px;
+}
+
+.jumbo-search {
+    width: 45%;
+    height: 65px;
+    background-color: #ffffff;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: 80px;
+    margin-bottom: 160px;
+    transition: 0.3;
+}
+
+.search-input {
+    width: 100%;
+    border-radius: 100px;
+    border: 0px solid;
+    outline: none;
+    text-indent: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.search-input::-webkit-input-placeholder {
+    opacity: 0.6;
+    color: #222222;
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    font-family: 'Varela Round', sans-serif;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.search-input::-webkit-input-placeholder:active {
+    opacity: 1;
+    place-content: none;
+}
+
+.search-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    background-color: #62cb66;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50px;
+    margin: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.v-space {
+    height: 300px;
+}
+
+.slogan {
+    flex-flow: column;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 80px;
+    font-size: 4vw;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.ff1{
+    font-size: 50px;
+}
+
+
+@media(max-width: 1600px) {
+    .jumbo {
+        height: 650px;
+    }
+}
+
+@media(max-width: 1450px) {
+    .jumbo {
+        height: 600px;
+    }
+    
+}
+
+@media(max-width: 1000px) {
+    .jumbo {
+        height: 450px;
+    }
+   
+    .jumbo-search {
+        width: 40%;
+        height: 45px;
+    }
+    .search-btn {
+        height: 35px;
+        min-width: 35px;
+    }
+    .search-input::-webkit-input-placeholder {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 850px) {
+    .jumbo {
+        height: 300px;
+    }
+    .slogan {
+        padding: 0;
+        margin-left: 10px;
+        margin-top: 12%;
+    }
+    .jumbo-search {
+        margin-left: 10px;
+    }
+    .search-input::-webkit-input-placeholder {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .slogan {
+       font-size: 50px;
+    }
+  }

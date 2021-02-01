@@ -1,0 +1,63 @@
+.form-edit {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-block {
+    width: 100%;
+}
+
+.edit-details {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.price-input {
+    width: 100px
+}
+
+.capacity-input {
+    width: 100px;
+}
+
+.edit-price {
+    margin-right: 20px;
+}
+
+.day-time-block {
+    margin: 20px 0px;
+}
+
+.hour-select {
+    margin-left: 10px;
+}
+
+.day-select {
+    margin-left: 10px;
+}
+
+.edit-day {
+    margin-right: 20px;
+}
+
+.save-btn {
+    width: 50px;
+}
+
+.edit-description {
+    margin: 20px 0px;
+}
+
+.edit-imgs {
+    margin-left: 40px;
+}
+
+.img-edit {
+    width: 200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8px;
+}

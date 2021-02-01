@@ -1,0 +1,71 @@
+.suggestions {
+  display: grid;
+  grid-gap: 10px;
+  text-align: center;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: dense;
+  font-weight: 500;
+  background-color: #ffffff;
+  margin: rem(20px) auto;
+  color: #222222;
+}
+
+.suggestions > * {
+  cursor: pointer;
+  border: 2px solid #222222;
+}
+
+.marked {
+  background-color: #42c054;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 50px;
+  border: 2px solid #42c054;
+}
+
+.unmarked {
+  border: 2px solid #42c054;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #42c054;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+
+  &.custom-file-upload input[type="file"] {
+   padding:10px;
+  }
+}
+
+// login
+
+.pn {
+  border: 2px solid #42c054;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #42c054;
+
+  &:active {
+    background-color: #42c054;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #222222;
+  }
+  &:hover {
+    background-color: #42c054;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #222222;
+  }
+  &:focus{
+    background-color: #42c054;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #222222;
+  }
+}

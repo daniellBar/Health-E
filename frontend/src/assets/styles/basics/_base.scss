@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #43c155;
+    color: #ffffff;
+}
+
+html {
+    font-family: 'Varela Round', sans-serif;
+    line-height: 1.6;
+    color: $clr2;
+}
+
+body {
+    font-size: rem(18px);
+    margin: 0;
+}
+
+h1, h2, h3, h4, h6 {
+    margin: 0 0 0.6em;
+    line-height: 1;
+}
+
+h5{
+    margin: 0.5em 0 0.6em;
+
+}
+
+h1 {
+    font-size: rem(68px);
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    margin: 0 0 1em;
+    max-width: 50ch;
+}
+
+a{
+    text-decoration-line: none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
+

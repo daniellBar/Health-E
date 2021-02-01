@@ -1,0 +1,208 @@
+// Font Sizes
+.fs12 {
+  font-size: rem(12px);
+}
+.fs14 {
+  font-size: rem(14px);
+}
+.fs18 {
+  font-size: rem(18px);
+}
+.fs20 {
+  font-size: rem(20px);
+}
+.fs24 {
+  font-size: rem(24px);
+}
+.fs28 {
+  font-size: rem(28px);
+}
+.fs30 {
+  font-size: rem(30px);
+}
+
+//font weights
+.fw4 {
+  font-weight: 400;
+}
+
+.fw6 {
+  font-weight: 600;
+}
+//colors:
+.clr1 {
+  color: $clr1;
+}
+.clr2 {
+  color: $clr2;
+}
+.clr3 {
+  color: $clr3;
+}
+.clr4 {
+  color: $clr4;
+}
+.clr5 {
+  color: $clr5;
+}
+.clr6 {
+  color: $clr6;
+}
+.black {
+  color: #000000;
+}
+.d-grey {
+  color: #4c4c4c;
+}
+
+// flex helpers
+
+.flex {
+  display: flex;
+
+  > *.full {
+    flex: 1;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.align-center {
+    align-items: center;
+  }
+  &.sb {
+    justify-content: space-between;
+  }
+  &.sa {
+    justify-content: space-around;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+  &.no-wrap {
+    flex-wrap: nowrap;
+  }
+  &.end {
+    justify-self: flex-end;
+  }
+}
+
+.justify-self {
+  justify-self: center;
+}
+
+.asc {
+  align-self: center;
+}
+
+li {
+  list-style: none outside none;
+}
+
+.mb50 {
+  margin-bottom: rem(50px);
+}
+
+.ml15 {
+  margin-left: 15px;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tal {
+  text-align: left;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #4c4c4c;
+}
+
+.p0 {
+  padding: 0;
+}
+
+.m10 {
+  margin: rem(10px);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cp {
+  cursor: pointer;
+  padding: 5px;
+  transition: 0s;
+  align-self: center;
+
+  &:hover {
+    // font-weight: bold;
+    // background-color: rgb(226, 213, 213);
+    // background-color: rgb(226, 213, 213);
+    color: #ff000000;
+    border-bottom: 2px solid #999999;
+    // border-radius: 12px;
+    // opacity: 0.2;
+  }
+}
+
+.inline,
+.i {
+  display: inline;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.just-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-20 {
+  height: 20px;
+}
+
+.marg-top-50 {
+  margin-top: 50px;
+}
+
+.marg-top-80 {
+  height: 80px;
+}
+
+.text-mid-left {
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.marg-5 {
+  margin: 5px;
+}
+
+.green {
+  color: #43c155;
+  display: inline;
+}
+
+// Media helpers
+
+.square-ratio {
+  @include aspect-ratio(1, 1);
+}
+.video-ratio {
+  @include aspect-ratio(16, 9);
+}
+.portrait-ratio {
+  @include aspect-ratio(9, 16);
+}

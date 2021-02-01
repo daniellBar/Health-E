@@ -1,0 +1,35 @@
+.footer {
+    margin-top: 50px;
+    background-color: #f7f7f7;
+    height: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid #dddddd;
+  }
+
+.footer-container{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.foot-col{
+    font-display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.foot-col p {
+    display: block;
+    font-size: 12px;
+}
+
+.foot-col .bold {
+    font-weight: 900;
+    color: #62cb66;
+}
