@@ -50,7 +50,6 @@
     }
 }
 
-
 .navs {
     display: flex;
     margin: 0 15px;
@@ -146,7 +145,6 @@
     min-height: 40px;
 }
 
-
 .header-buy {
     cursor: pointer;
     padding: 10px 30px 10px;
@@ -224,5 +222,11 @@
             width: 100%;
             margin: 0 15px;
         }
+    }
+}
+
+@media (max-width: 450px) {
+    .header-buy {
+        display: none;
     }
 }
