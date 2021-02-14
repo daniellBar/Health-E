@@ -21,7 +21,12 @@
     max-width: 70px;
     max-height: 70px;
     display: block;
-    margin-right: 20px;
+    // margin-right: 20px;
+}
+
+.act-btns {
+    display: flex;
+    justify-content: space-around;
 }
 
 .fs-10 {
@@ -29,7 +34,7 @@
 }
 
 .event-title-dash {
-    min-width: 300px
+    min-width: 300px;
 }
 
 .bg-white {
@@ -48,10 +53,8 @@
     background-color: rgb(255, 255, 255);
 }
 
-.dash-right {
-    width: 100%;
+.act-toggle-participants {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
 }
 
@@ -69,16 +72,11 @@
 .dash-btn:hover {
     background-color: rgb(149, 191, 143);
     border-radius: 50px;
-    
 }
 
 .strip {
     display: grid;
-    grid-template-columns: 12% 44% 17% 15% 10%
-}
-
-.pad-10 {
-    width: 10px;
+    grid-template-columns: 1.5fr 4fr 2fr 1.5fr 1fr;
 }
 
 .grid-participants-info {
@@ -106,7 +104,6 @@
 .attendie-cell {
     background-color: #f5f5f5;
     display: flex;
-    flex-direction: row;
     height: 40px;
 }
 
@@ -115,55 +112,63 @@
     width: fit-content;
 }
 
-@media(max-width: 1000px) {
-    .profile-top-bar{
+@media (max-width: 1000px) {
+    .profile-top-bar {
         font-size: 16px;
         margin-bottom: 15px;
     }
 
-    .pref-line{
+    .pref-line {
         font-size: 16px;
     }
 
-    .main-info-container{
+    .main-info-container {
         font-size: 16px;
     }
 
-    .dash-charts{
-       flex-direction: column;
-   }
-   .act-top{
-       font-size: 14px;
-   }
-   .just-row button{
-    padding: 5px;
-    font-size: 11px;
-}
+    .dash-charts {
+        flex-direction: column;
+    }
+    .act-top {
+        font-size: 14px;
+    }
 }
 
-@media(max-width: 850px) {
+@media (max-width: 850px) {
     .strip {
         align-items: center;
         justify-content: space-between;
-        grid-template-columns: 15% 45% 15% 15% 5%   
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
     }
 
-    .just-row button{
-        padding: 5px;
-        font-size: 11px;
+    .event-title-dash {
+        min-width: inherit;
     }
 
-    .img-40{
+    .img-40 {
         max-height: inherit;
     }
-}
 
-@media(max-width: 700px) {
-    .strip {
-        align-items: center;
-        justify-content: space-between;
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    .day-time {
+        grid-column-start: 3;
+        grid-row-start: 1;
     }
 
-    .just-row button{ font-size: 8px;}
+    .act-btns {
+        grid-column-start: 2;
+        grid-row-start: 2;
+        justify-content: start;
+        .edit-btn{
+            margin-right: 15px;
+        }
+    }
+
+    .act-toggle-participants {
+        grid-column-start: 3;
+        grid-row-start: 2;
+        display: block;
+    }
 }
+

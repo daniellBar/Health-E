@@ -1,33 +1,8 @@
 .main-user-container {
-  display: grid;
-  grid-template-columns: 5px 1fr 5px;
-
-  > * {
-    grid-column: 2;
-
-    &.full {
-      grid-column: 1 /-1;
-    }
-  }
-
-  @include for-narrow-layout {
-    grid-template-columns:
-      minmax(20px, 1fr)
-      minmax(auto, $mobile-breakpoint)
-      minmax(20px, 1fr);
-  }
-  @include for-normal-layout {
-    grid-template-columns:
-      minmax(20px, 1fr)
-      minmax(auto, $narrow-breakpoint)
-      minmax(20px, 1fr);
-  }
-  @include for-wide-layout {
-    grid-template-columns:
-      minmax(20px, 1fr)
-      minmax(auto, 70%)
-      minmax(20px, 1fr);
-  }
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1120px;
 }
 
 .dash {
@@ -46,6 +21,7 @@
 .persinal-info {
   justify-items: center;
 }
+
 .profile-pic {
   max-width: 250px;
   max-height: 250px;
@@ -73,28 +49,25 @@
   margin-bottom: rem(50px);
 }
 
-.profile-top-bar{
+.profile-top-bar {
   padding-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.profile-bar-left{
-  width:90%;
-  text-align:start ;
+.profile-bar-left {
+  width: 90%;
+  text-align: start;
   padding-right: 50px;
 }
 
-
-.profile-bar-right{
+.profile-bar-right {
   width: 300px;
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-
-
 }
 
 .user-activity-preview {
@@ -158,51 +131,19 @@
   background-color: #e9eaeb;
 }
 
-// DASHBORD COMPONENT
 
-.bar {
-  width: rem(500px);
-  height: rem(500px);
-}
-
-.pie {
-  width: rem(500px);
-  height: rem(500px);
-}
-
-canvas {
-  display: inline !important;
-  max-height: 430px;
-  max-width: 430px;
-}
-
-.dashbord-info {
-  margin-bottom: rem(50px);
-  padding-top: rem(20px);
-}
-
-.add-btn {
-  display: flex;
-  padding: 10px;
-  border: 2px solid #42c054;
-  border-radius: 4px;
-  background-color: #ffffff;
-  color: #42c054;
-
-  &:active {
-    background-color: #42c054;
-    color: white;
-    border-radius: 10px;
-    border: 2px solid #222222;
+@media (max-width: 850px) {
+  .main-user-container {
+    margin-top: 180px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
-.cp-unique {
-  cursor: pointer;
-  color: #222222;
-  transition: 0.3s;
-
-  &:hover {
-    background-color: rgb(149, 191, 143);
+@media (max-width: 400px){
+  .main-user-container {
+    margin-top: 180px;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 }

@@ -29,7 +29,6 @@ class _SignUp extends Component {
     }
 
     addToPrefs = (pref) => {
-        // pushing item to the array inside the big object
         let prefs = (this.state.prefs || []);
         prefs.push(pref.name)
         this.setState(prevState => ({
@@ -38,7 +37,6 @@ class _SignUp extends Component {
                 prefs: [...this.state.signupCred.prefs, pref.name]
             }
         }))
-        //changig the second item in the object suggestions
         let suggestion = this.state.suggestion
         var idx = userService.findIdxToMark(suggestion, pref)
         pref.isMarked = !pref.isMarked;
@@ -117,7 +115,7 @@ class _SignUp extends Component {
 
         const { loggedInUser } = this.props;
         return (
-            <div className="main-container tac">
+            <div className="main-container">
                 <h1 className="marg-top-50">
                     SignUp Here!
                 </h1>

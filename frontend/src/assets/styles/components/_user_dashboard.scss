@@ -1,0 +1,53 @@
+.bar-chart,.pie-chart {
+    width: rem(500px);
+    height: rem(500px);
+  }
+  
+  canvas {
+    display: inline !important;
+    max-height: 430px;
+    max-width: 430px;
+  }
+  
+  .dashbord-info {
+    margin-bottom: rem(50px);
+    padding-top: rem(20px);
+  }
+  
+  .add-btn {
+    display: flex;
+    padding: 10px;
+    border: 2px solid #42c054;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #42c054;
+  
+    &:active {
+      background-color: #42c054;
+      color: white;
+      border-radius: 10px;
+      border: 2px solid #222222;
+    }
+  }
+  
+  .cp-unique {
+    cursor: pointer;
+    color: #222222;
+    transition: 0.3s;
+  
+    &:hover {
+      background-color: rgb(149, 191, 143);
+    }
+  }
+  
+@media (max-width: 850px) {
+
+    .bar-chart,
+    .pie-chart {
+      width: auto;
+    }
+  
+    canvas {
+      width: 350px !important;
+    }
+  }

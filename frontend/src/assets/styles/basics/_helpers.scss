@@ -29,25 +29,7 @@
 .fw6 {
   font-weight: 600;
 }
-//colors:
-.clr1 {
-  color: $clr1;
-}
-.clr2 {
-  color: $clr2;
-}
-.clr3 {
-  color: $clr3;
-}
-.clr4 {
-  color: $clr4;
-}
-.clr5 {
-  color: $clr5;
-}
-.clr6 {
-  color: $clr6;
-}
+
 .black {
   color: #000000;
 }
@@ -131,23 +113,6 @@ li {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.cp {
-  cursor: pointer;
-  padding: 5px;
-  transition: 0s;
-  align-self: center;
-
-  &:hover {
-    // font-weight: bold;
-    // background-color: rgb(226, 213, 213);
-    // background-color: rgb(226, 213, 213);
-    color: #ff000000;
-    border-bottom: 2px solid #999999;
-    // border-radius: 12px;
-    // opacity: 0.2;
-  }
 }
 
 .inline,

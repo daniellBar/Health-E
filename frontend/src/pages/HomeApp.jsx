@@ -5,7 +5,7 @@ import { Articles } from '../cmps/home/Articles.jsx'
 
 export function HomeApp(props){
     return (
-      <section>
+      <section className="home-app">
         <Jumbo />
         <div className="main-container-home">
           <Suggested />

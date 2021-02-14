@@ -10,20 +10,26 @@
 @import "basics/base.scss";
 @import "basics/ui.scss";
 
+
+//Pages
+@import "views/_home.scss";
+@import "views/_activity.scss";
+@import "views/_activity_details.scss";
+@import "views/user_profile.scss";
+
 // Components
 
 // Activity
-@import "components/activity.scss";
 @import "components/activity_preview.scss";
-@import "components/activity_details.scss";
 
 // Home
 @import "components/articles.scss";
 @import "components/jumbo.scss";
+@import "components/_suggested.scss";
 
 //User
-@import "components/user_profile.scss";
-@import "components/dashboard.scss";
+@import "components/user_dashboard.scss";
+@import "components/_user_activity_preview.scss";
 
 // rest
 @import "components/main_header.scss";

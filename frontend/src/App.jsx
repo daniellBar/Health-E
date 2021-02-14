@@ -12,7 +12,6 @@ class _App extends Component {
     return (
       <div className="App">
         <Header isHomepage={isHomepage}/>
-        <div className="marg-top-80"></div>
           <Switch>
             { routes.map(route => <Route key={ route.path } component={ route.component } path={ route.path } />) }
           </Switch>

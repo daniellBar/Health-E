@@ -17,15 +17,15 @@ class _Suggested extends Component {
     const { activities } = this.props;
     if (!activities) return <div>Loading....</div>;
 
-    const arr = activities.slice(0, 5);
+    const suggested = activities.slice(0, 8);
     return (
-      <section>
-        <h3>Suggested for you:</h3>
-        <p>Find lectures, trainers and suppliers around you</p>
-
-        <div className="activity-list">
-          {arr.map((activity) => (
-            <ActivityPreview bottomBorder={false} activity={activity} rate={activity.rate} key={activity._id} />
+      <section className="suggested-container">
+        <h3 className="title">Popular Activities:</h3>
+        <div className="suggested-scrolled-container">
+          {suggested.map((activity) => (
+            <div className="scrolled-Preview">
+              <ActivityPreview bottomBorder={false} activity={activity} rate={activity.rate} key={activity._id} />
+            </div>
           ))}
         </div>
       </section>

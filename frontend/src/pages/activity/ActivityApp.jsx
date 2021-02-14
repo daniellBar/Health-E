@@ -10,7 +10,9 @@ class _ActivityApp extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        this.props.loadActivities(this.props.filterBy);
+        const searchParams = new URLSearchParams(this.props.location.search)
+        const filterBy = utilService.buildFilterBy(searchParams, this.props.filterBy)
+        this.props.loadActivities(filterBy);
     }
 
     componentDidUpdate(prevProps) {
@@ -40,6 +42,7 @@ class _ActivityApp extends Component {
         return isChanged
     }
 
+
     onRemove = (_id) => {
         this.props.removeActivity(_id);
     }
@@ -54,12 +57,12 @@ class _ActivityApp extends Component {
         const activities = this.props.activities
         if (!activities) return <div className="loader"><img src={'https://res.cloudinary.com/dcnijwmki/image/upload/v1611662818/general/loader_b7k81c.gif'} alt='loading' /></div>
         return (
-            <div>
+            <section className="activity-app">
                 <ActivityFilter />
                 <div className="main-container-activities marg-top-50">
                     <ActivityList bottomBorder={true} activities={activities} onRemove={this.onRemove} />
                 </div>
-            </div>
+            </section>
         )
     }
 }

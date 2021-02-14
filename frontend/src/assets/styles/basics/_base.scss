@@ -45,6 +45,11 @@ a{
     text-decoration-line: none;
 }
 
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
 button {
     outline: none;
     cursor: pointer;

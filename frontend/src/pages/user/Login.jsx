@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {loadUsers,removeUser,login,logout,} from '../../store/actions/userActions';
+import { loadUsers, removeUser, login, logout, } from '../../store/actions/userActions';
 
 class _Login extends Component {
   state = {
     msg: '',
     loginCred: {
-      // email: '',
       password: ''
     },
     signupCred: {
-      // email: '',
       password: ''
     }
   };
@@ -48,21 +46,11 @@ class _Login extends Component {
 
   removeUser = userId => {
     this.props.removeUser(userId);
-  };
-
-  openGuestMode = (ev) => {
-    ev.preventDefault();
-    const guest = {
-      email: 'guestMode@gmail.com',
-      password: '123'
-    }
-    this.props.login(guest);
-    this.setState({ loginCred: { email: '', password: '' } });
   }
 
   render() {
     let loginSection = (
-      <form className="main-container" onSubmit={this.doLogin}>
+      <form className="login-form" onSubmit={this.doLogin}>
         <div className="login tac">
           <input className="login-input"
             type="text"
@@ -71,8 +59,8 @@ class _Login extends Component {
             value={this.state.loginCred.email || ''}
             onChange={this.loginHandleChange}
             placeholder="Email"
-        />
-        <br />
+          />
+          <br />
           <input className="login-input"
             type="password"
             name="password"
@@ -91,9 +79,9 @@ class _Login extends Component {
     return (
       <div className="main-container">
         <div className="just-row flex justify-center">
-          {(!loggedInUser)?<h1 className="tac marg-top-50">
+          {(!loggedInUser) ? <h1 className="tac marg-top-50">
             Login
-        </h1>:''}
+        </h1> : ''}
         </div>
         <h2>{this.state.msg}</h2>
         {loggedInUser && (
@@ -104,7 +92,6 @@ class _Login extends Component {
         )}
         {!loggedInUser && loginSection}
         <hr />
-        {/* <button onClick={this.props.loadUsers}>Get All Users</button> */}
         {this.props.isLoading && 'Loading...'}
         {this.props.users && <ul>
           {this.props.users.map(user => (
@@ -120,11 +107,8 @@ class _Login extends Component {
             </li>
           ))}
         </ul>}
-        <div className="guest-mode flex justify-center">
-          <button className="demo-mode-btn" onClick={this.openGuestMode}>Login using a demo user</button>
-        </div>
       </div>
-    );
+    )
   }
 }
 

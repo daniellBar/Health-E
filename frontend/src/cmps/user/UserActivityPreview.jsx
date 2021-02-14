@@ -51,18 +51,17 @@ class _UserActivityPreview extends Component {
                                </p>
                             </div>
 
-                            <div className="just-row">
-                                {(madeOfOperation === 'organizer') ? (<div onClick={(ev)=> {
+                            <div className="act-btns">
+                                {(madeOfOperation === 'organizer') ? (<div className="edit-btn" onClick={(ev)=> {
                                     ev.stopPropagation()
                                     this.props.history.push(`/activity/edit/${activity._id}`)}}><i className=" dash-btn fas fa-user-cog nav-override-color"></i></div>) : ''}
-                                <div className="pad-10"></div>
                                 {(madeOfOperation === 'organizer') ? (<button className="dash-btn" onClick={(ev) => onRemove(ev, activity._id)}><i className="far fa-trash-alt"></i></button>) : ''}
                                 {(madeOfOperation === 'subscriber') ? (<Button variant="outlined" onClick={(ev) => onRemoveFromList(ev, activity, user)}>Unsubscribe</Button>) : ''}
                             </div>
 
 
 
-                            <div className="dash-right">
+                            <div className="act-toggle-participants">
                                 {(madeOfOperation === 'organizer') ? (
                                     <button className="dash-btn" onClick={(ev) => this.showActivityDetails(ev)}>{this.state.sign}</button>) : ''}
                             </div>
@@ -81,7 +80,7 @@ class _UserActivityPreview extends Component {
                                                     <div className="dash-attendie">
                                                         <div className="attendie-cell">
                                                             <div><img className="attending-img" src={participant.imgUrl} alt="" /></div>
-                                                            <div className=".nav-override-color">{participant.fullName}</div>
+                                                            <div className="asc nav-override-color">{participant.fullName}</div>
                                                         </div>
                                                     </div>
                                                 </div>

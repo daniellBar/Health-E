@@ -1,43 +1,33 @@
 import React, { Component } from "react";
-import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-export class Articles extends Component {
+class _Articles extends Component {
+
+  redirectClick = (tag) => {
+    this.props.history.push(`/activity?tags=${tag}`)
+  }
+
   render() {
+    const articles = ['sports', 'well-being', 'nutrition', 'outdoors']
     return (
-      <section>
-        <div className="articles-row" >
-
-          <NavLink to="/activity?tags=sports" className="article_a" >
-            <div>
-              <h2>Sports</h2>
+      <section className="article-container">
+        {articles.map(article => (
+          <div className="article-flip-card" key={article}>
+            <div className="article-flip-card-inner" onClick={() => { this.redirectClick(article) }}>
+              <div className="article-flip-card-front"
+                style={{ backgroundImage: `url(${require(`../../assets/img/${article}.jpg`)})` }}>
+                <h2 className="title">{article}</h2>
+              </div>
+              <div className="article-flip-card-back">
+                <p>See More</p>
+              </div>
             </div>
-          </NavLink>
-
-          <NavLink to="/activity?tags=well-being" className="article_b" >
-            <div>
-              <h2>Well Being</h2>
-            </div>
-          </NavLink>
-
-        </div>
-
-        <div className="articles-row">
-
-          <NavLink to="/activity?tags=nutrition" className="article_c">
-            <div >
-              <h2>Nutrition</h2>
-            </div>
-          </NavLink>
-
-          <NavLink to="/activity?tags=outdoors" className="article_d">
-            <div>
-              <h2>Outdoors</h2>
-            </div>
-          </NavLink>
-
-        </div>
+          </div>
+        ))}
       </section>
     )
   }
 }
+
+export const Articles = withRouter(_Articles)
 

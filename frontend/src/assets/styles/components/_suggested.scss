@@ -1,0 +1,28 @@
+.suggested-container {
+    .title {
+        margin-bottom: 30px;
+        color: #43c155;
+        margin-left: 10px;
+    }
+}
+
+.suggested-scrolled-container {
+    overflow-x: scroll;
+    display: flex;
+    &::-webkit-scrollbar {
+        height: 8px;
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #232a434d;
+        border-radius: 16px;
+      }
+}
+
+.scrolled-Preview {
+    margin: 0 10px;
+    min-width: 250px;
+    &:hover {
+        transform: translateY(-1rem);
+    }
+}

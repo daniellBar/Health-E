@@ -64,7 +64,7 @@ class _BarChart extends Component {
         return (
             <div>
                 <h3 className="tac">Number of Participants Per Event</h3>
-                <Bar className="bar"
+                <Bar
                     data={data}
                     width={300}
                     height={300}

@@ -9,6 +9,7 @@ import socketService from '../services/socketService.js'
 export class _Header extends Component {
 
   state = {
+    isMenuActive: false,
     isNotificationOn: false,
     notificationInfo: {
       activityTitle: '',
@@ -39,30 +40,29 @@ export class _Header extends Component {
       this.ShowNotification(notificationInfo)
     })
   }
- 
+
   ShowNotification = (notificationInfo) => {
     this.setState({ ...this.state, isNotificationOn: true, notificationInfo: notificationInfo })
   }
 
-  openGuestMode = (ev) => {
-    ev.preventDefault();
-    const guest = {
-      email: 'guestMode@gmail.com',
-      password: 'guest123'
+  toggleMenuBtn = (fromLogo = false) => {
+    if (fromLogo === true) {
+      const { isMenuActive } = this.state
+      if(isMenuActive===false) return
     }
-    this.props.login(guest);
-    this.setState({ loginCred: { email: '', password: '' } });
+    this.setState({ isMenuActive: !this.state.isMenuActive })
   }
 
 
   render() {
     const searchParams = this.props.location.search
     const { isHomepage, user } = this.props;
-    const { isNotificationOn } = this.state;
+    const { isNotificationOn, isMenuActive } = this.state;
     const { activityTitle, customerName } = this.state.notificationInfo;
     return (
-      <div className="main-header-wrapper">
-        <header className="main-header">
+
+      <header className="main-header-wrapper">
+        <div className={`main-header ${isMenuActive ? 'active' : ''}`}>
           <div className="left-end">
             {isNotificationOn && <div className="purchase-notification flex">
               <div className="ml15">New Purchase!</div>
@@ -71,7 +71,7 @@ export class _Header extends Component {
               <button className="close-notification" onClick={() => this.setState({ isNotificationOn: false })}>x</button>
             </div>}
             <div className="logo">
-              <NavLink to="/">
+              <NavLink to="/" onClick={()=>this.toggleMenuBtn(true)}>
                 <div className="logo-img">
                   <img src={require("../assets/img/logo.jpg")} alt="" />
                 </div>
@@ -79,33 +79,46 @@ export class _Header extends Component {
             </div>
           </div>
 
-          {!isHomepage && <SearchBox cssClass={"header-search"} />}
+          {!isHomepage && <div className={`header-search-container ${isMenuActive ? 'active' : ''}`}><SearchBox cssClass={"header-search"} /></div>}
 
-          {(!user) ? (
-            <div className="right-end">
-              <div>
-                <span className="cp m10 nav-override-color " onClick={this.openGuestMode}>Demo</span>
-                <NavLink className="explore m10 nav-override-color" exact to={`/activity${searchParams}`}>Explore</NavLink>
-                <NavLink className="cp nav-override-color" to={`/login`}>Login</NavLink>
-                <NavLink className="cp nav-override-color" to={`/signUp`}>SignUp</NavLink>
+
+          <div className="right-end">
+            <div className="icons">
+              <div className="avatar nav-override-color">
+                {!user ?
+                  <i className="far fa-2x fa-user-circle"></i> :
+                  <NavLink to={`/user/${user._id}`}><img className="attending-img cursor-pointer" src={user.imgUrl} alt="#" /></NavLink>
+                }
               </div>
-              <div>
-                <NavLink className="nav-override-color" to={`/user`}><i className="far fa-2x fa-user-circle"></i></NavLink>
+
+              <div onClick={this.toggleMenuBtn} className={`menu-btn ${isMenuActive ? 'active' : ''}`}>
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
               </div>
-            </div>) :
-            <div className="right-end">
-              <div className="flex sb" >
-                <NavLink className="explore nav-override-color m10" exact to={`/activity${searchParams}`}>Explore</NavLink>
-                <NavLink className="cp nav-override-color" to={`/`} onClick={this.props.logout}>Logout</NavLink>
-              </div>
-              <div className="asc">
-                <NavLink className="nav-override-color" to={`/user/${user._id}`}><img className="attending-img cursor-pointer" src={user.imgUrl} alt="#" /></NavLink>
-              </div>
+
             </div>
-          }
-        </header>
-      </div>
-    );
+
+            <div className={`navs ${isMenuActive ? 'active' : ''} ${isHomepage ? 'home' : ''}`}>
+              <NavLink className="navs-child" onClick={this.toggleMenuBtn} exact to={`/activity${searchParams}`}>Explore</NavLink>
+              {!user &&
+                <>
+                  <NavLink className="navs-child" onClick={this.toggleMenuBtn} to={`/login`}>Login</NavLink>
+                  <NavLink className="navs-child" onClick={this.toggleMenuBtn} to={`/signUp`}>SignUp</NavLink>
+                </>
+              }
+              {user &&
+                <NavLink className="navs-child" to={`/`} onClick={() => {
+                  this.toggleMenuBtn()
+                  this.props.logout()
+                }
+                }>Logout</NavLink>}
+            </div>
+          </div>
+        </div>
+
+      </header>
+    )
   }
 }
 
