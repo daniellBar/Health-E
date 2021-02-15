@@ -11,38 +11,16 @@ class _SignUp extends Component {
         signupCred: {
             email: '',
             password: '',
-            fullName: '',
-            prefs: [],
-            imgUrl: ''
-        },
-        suggestion: [{ name: 'sport', isMarked: false }, { name: 'yoga', isMarked: false }, { name: 'cardio', isMarked: false },
-        { name: 'pilates', isMarked: false }, { name: 'mindfullness', isMarked: false }, { name: 'meditation', isMarked: false },
-        { name: 'well-being', isMarked: false }, { name: 'nutrition', isMarked: false }, { name: 'diet', isMarked: false },
-        { name: 'pshychology', isMarked: false }]
-    };
-
-    onUpdateImg = async (ev) => {
-        const img = await uploadImg(ev)
-        let signupCred = this.state.signupCred;
-        signupCred.imgUrl = img;
-        this.setState({ signupCred })
+            fullName: ''
+        }
     }
 
-    addToPrefs = (pref) => {
-        let prefs = (this.state.prefs || []);
-        prefs.push(pref.name)
-        this.setState(prevState => ({
-            signupCred: {
-                ...prevState.signupCred,
-                prefs: [...this.state.signupCred.prefs, pref.name]
-            }
-        }))
-        let suggestion = this.state.suggestion
-        var idx = userService.findIdxToMark(suggestion, pref)
-        pref.isMarked = !pref.isMarked;
-        suggestion.splice(idx, 1, pref)
-        this.setState({ suggestion })
-    }
+    // onUpdateImg = async (ev) => {
+    //     const img = await uploadImg(ev)
+    //     let signupCred = this.state.signupCred;
+    //     signupCred.imgUrl = img;
+    //     this.setState({ signupCred })
+    // }
 
     signupHandleChange = ev => {
         const { name, value } = ev.target;
@@ -56,21 +34,21 @@ class _SignUp extends Component {
 
     doSignup = async ev => {
         ev.preventDefault();
-        const { email, password, fullName, prefs, imgUrl } = this.state.signupCred;
-        if (!email || !password || !fullName || !prefs || !imgUrl) {
+        const { email, password, fullName } = this.state.signupCred;
+        const imgUrl = 'https://res.cloudinary.com/dcnijwmki/image/upload/v1611597510/healthE/profiles/guest_it6pn4.jpg'
+        if (!email || !password || !fullName) {
             return this.setState({ msg: 'All inputs are required!' });
         }
-        const signupCreds = { email, password, fullName, prefs, imgUrl, income:0 };
+        const signupCreds = { email, password, fullName, imgUrl, prefs: [] };
         this.props.signup(signupCreds);
-        this.setState({ signupCred: { email: '', password: '', fullName: '', prefs: [] } });
-    };
+    }
 
 
     render() {
         let signupSection = (
-            <form onSubmit={this.doSignup}>
+            <form class="sign-up-form" onSubmit={this.doSignup}>
                 <input
-                    className="login-input"
+                    className="signup-input"
                     type="text"
                     name="email"
                     value={this.state.signupCred.email}
@@ -79,7 +57,7 @@ class _SignUp extends Component {
                 />
                 <br />
                 <input
-                    className="login-input"
+                    className="signup-input"
                     name="password"
                     type="password"
                     value={this.state.signupCred.password}
@@ -88,7 +66,7 @@ class _SignUp extends Component {
                 />
                 <br />
                 <input
-                    className="login-input"
+                    className="signup-input"
                     type="text"
                     name="fullName"
                     value={this.state.signupCred.fullName}
@@ -96,30 +74,19 @@ class _SignUp extends Component {
                     placeholder="Full Name"
                 />
                 <br />
-                        <h3 className="fs20 p10 marg-top-50">Upload Photo</h3>
-                    <label htmlFor="file-upload" className="">
-                        <input id="file-upload" className="upload-file" onChange={(ev) => this.onUpdateImg(ev)} type="file" />
-                    </label>
-
-               
-                <h2 className="tac d-hi">Let us know what you're into!</h2>
-                <section className="suggestions fs20 ">
-                    {(this.state.suggestion) ? (this.state.suggestion.map((suggest, idx) => (
-                        <div key={idx}
-                            className={`${this.state.suggestion[idx].isMarked ? "marked " : "unmarked "}`}
-                            onClick={() => this.addToPrefs(suggest)}>{suggest.name}</div>))) : ''}
-                </section>
-                <button className="login-btn">Signup</button>
+                <button className="signup-btn">Signup</button>
             </form>
-        );
+        )
 
         const { loggedInUser } = this.props;
         return (
             <div className="main-container">
-                <h1 className="marg-top-50">
-                    SignUp Here!
-                </h1>
-                <h2>{this.state.msg}</h2>
+                <div className="flex justify-center align-center column">
+                    <h2 className="marg-top-50">
+                        SignUp Here!
+                </h2>
+                    <h2>{this.state.msg}</h2>
+                </div>
                 {loggedInUser && (
                     <div>
                         <h2>Welcome: {loggedInUser.fullName} </h2>

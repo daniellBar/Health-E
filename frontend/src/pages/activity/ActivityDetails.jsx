@@ -132,7 +132,7 @@ export class _ActivityDetails extends Component {
             ))}
           </div>
           <div className="event-main-container">
-            {/* LEFT SIDE */}
+        
             <div className="event-left-side">
               <div className="event-creator-container">
                 <div>
@@ -186,8 +186,6 @@ export class _ActivityDetails extends Component {
               ) : ''}
             </div>
 
-
-            {/* RIGHT SIDE */}
             <div className="event-right-side">
               <div className="event-buy">
                 <div className="just-row">
@@ -235,7 +233,6 @@ export class _ActivityDetails extends Component {
 
               </div>
             </div>
-            {/* END OF RIGHT SIDE */}
           </div>
         </div>
       </section>

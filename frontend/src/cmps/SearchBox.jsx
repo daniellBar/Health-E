@@ -1,11 +1,8 @@
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { utilService } from '../services/utilService.js'
 import { setFilter } from '../store/actions/filterActions.js'
-
-// var debounce = require('lodash.debounce');
 
 class _SearchBox extends Component {
     state = {

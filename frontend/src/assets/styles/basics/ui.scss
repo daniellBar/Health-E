@@ -21,7 +21,6 @@
     padding-left: 40px;
 }
 
-
 .pad-r-10 {
     padding-right: 40px;
 }
@@ -29,7 +28,6 @@
 .pad-r-30 {
     padding-right: 30px;
 }
-
 
 .pad-r-40 {
     padding-right: 80px;
@@ -39,8 +37,8 @@
     display: inline;
 }
 
-.login-btn {
-    font-family: 'Varela Round', sans-serif;
+.login-btn, .signup-btn {
+    font-family: "Varela Round", sans-serif;
     padding: 15px 40px 15px;
     background-color: #62cb66;
     color: #fff !important;
@@ -51,7 +49,7 @@
 }
 
 .login-btn-small {
-    font-family: 'Varela Round', sans-serif;
+    font-family: "Varela Round", sans-serif;
     padding: 10px 20px 10px;
     background-color: #62cb66;
     color: #fff !important;
@@ -61,7 +59,8 @@
     margin-top: 0px;
 }
 
-.login-input {
+.login-input,
+.signup-input {
     padding: 10px;
     background-color: #ffffff;
     border: 0;
@@ -71,18 +70,8 @@
     font-size: 18px;
 }
 
-.upload-file {
-    font-family: 'Varela Round', sans-serif;
-    padding: 15px 40px 15px;
-    background-color: #ffffff;
-    color: #62cb66 !important;
-    border-radius: 3em;
-    font-size: 18px;
-    border: 2px solid #62cb66;
-    margin-top: 0px;
-    align-items: center;
-    align-content: center;
-
+.sign-up-form{
+    text-align: center;
 }
 
 .loader {

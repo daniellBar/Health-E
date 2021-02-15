@@ -32,20 +32,14 @@ class _BarChart extends Component {
         return chartService.findMaxCapacity(eventsCreatedByUser)
     }
 
-
     render() {
         const { user } = this.props;
         const { activities } = this.props;
         if (!user) return <div>loading</div>
         let eventsCreatedByUser = this.onGetCreatedEvents(activities, user);
-
-        //bild the bar variables:
         let titles = this.onGetTitles(eventsCreatedByUser)
         let memebersNum = this.onGetMembers(eventsCreatedByUser)
         const maxCapacity = this.onFindMaxCapacity(eventsCreatedByUser);
-
-        // start bild the bar
-
         const data = {
             labels: titles,
             datasets: [
@@ -103,7 +97,6 @@ class _BarChart extends Component {
         )
     }
 }
-
 
 const mapStateToProps = state => {
     return {

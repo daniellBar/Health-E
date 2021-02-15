@@ -160,7 +160,4 @@ const mapDispatchToProps = {
   removeActivity
 };
 
-export const UserDetails = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(_UserDetails);
+export const UserDetails = connect(mapStateToProps,mapDispatchToProps)(_UserDetails);

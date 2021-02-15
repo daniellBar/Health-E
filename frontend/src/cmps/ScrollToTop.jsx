@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { withRouter } from 'react-router'
 
-
 class _ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {

@@ -43,8 +43,5 @@ const mapDispatchToProps = {
   loadActivities
 }
 
-export const Suggested = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(_Suggested)
+export const Suggested = connect(mapStateToProps,mapDispatchToProps)(_Suggested)
 

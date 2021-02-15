@@ -79,9 +79,9 @@ class _Login extends Component {
     return (
       <div className="main-container">
         <div className="just-row flex justify-center">
-          {(!loggedInUser) ? <h1 className="tac marg-top-50">
+          {(!loggedInUser) ? <h2 className="tac marg-top-50">
             Login
-        </h1> : ''}
+        </h2> : ''}
         </div>
         <h2>{this.state.msg}</h2>
         {loggedInUser && (

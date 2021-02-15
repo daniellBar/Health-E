@@ -2,7 +2,7 @@ const authService = require('./auth.service')
 const logger = require('../../services/logger.service')
 
 async function login(req, res) {
-    console.log('req.body-',req.body);
+    console.log('req.body-', req.body);
     const { email, password } = req.body
     try {
         const user = await authService.login(email, password)
@@ -15,11 +15,10 @@ async function login(req, res) {
 
 async function signup(req, res) {
     try {
-        console.log('reqBODY-',req.body);
-        const { email, password, fullName, prefs, imgUrl, income } = req.body
-        logger.debug(email + ", " + fullName + ', ' + password + ', '+ prefs + ', '+ imgUrl  + ', '+income )
-        const account = await authService.signup(email, password, fullName, prefs, imgUrl, income)
-        
+        console.log('reqBODY-', req.body);
+        const { email, password, fullName, imgUrl, prefs } = req.body
+        logger.debug(email + ', ' + fullName + ', ' + password + ', ' + imgUrl)
+        const account = await authService.signup(email, password, fullName, imgUrl, prefs)
         logger.debug(`auth.route - new account created: ` + JSON.stringify(account))
         const user = await authService.login(email, password)
         req.session.user = user
@@ -30,7 +29,7 @@ async function signup(req, res) {
     }
 }
 
-async function logout(req, res){
+async function logout(req, res) {
     try {
         req.session.destroy()
         res.send({ message: 'logged out successfully' })

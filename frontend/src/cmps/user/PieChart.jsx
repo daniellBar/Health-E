@@ -43,8 +43,6 @@ class _PieChart extends Component {
         const { activities } = this.props;
         if (!user) return <div>loading</div>
         let eventsCreatedByUser = this.onGetCreatedEvents(activities, user);
-
-        //build the bar variables:
         let titles = this.onGetTitles(eventsCreatedByUser)
         let incomeFromEvent = this.onGetIncomeFromEvent(eventsCreatedByUser)
         let income = this.onGetIncome(incomeFromEvent)
@@ -107,7 +105,6 @@ class _PieChart extends Component {
         )
     }
 }
-
 
 const mapStateToProps = state => {
     return {

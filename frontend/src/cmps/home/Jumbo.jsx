@@ -13,5 +13,5 @@ export function Jumbo() {
         <SearchBox cssClass={'jumbo-search'}/>
       </div>
     </section>
-  );
+  )
 }

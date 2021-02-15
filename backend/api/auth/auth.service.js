@@ -15,15 +15,14 @@ async function login(email, password) {
     return user;
 }
 
-async function signup(email, password, fullName , prefs, imgUrl, income) {
+async function signup(email, password, fullName, imgUrl, prefs) {
     logger.debug(`auth.service - signup with email: ${email}, fullName: ${fullName}`)
-    if (!email || !password || !fullName || !prefs || !imgUrl) return Promise.reject('all valids are required!')
-
+    if (!email || !password || !fullName) return Promise.reject('all valids are required!')
     const hash = await bcrypt.hash(password, saltRounds)
-    return userService.add({email, password: hash , fullName, imgUrl, prefs, income})
+    return userService.add({ email, password: hash, fullName, imgUrl, prefs })
 }
 
 module.exports = {
     signup,
-    login,
+    login
 }
