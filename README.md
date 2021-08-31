@@ -11,7 +11,6 @@ Backend is written with NodeJs, ExpersJs, Socket.IO, data is on MongoDB.
 please note:
 
 some of the features require login.
-you can create a user or login using the deom option.
 best option in order to watch a user profile page with all its features is to login as an existing user ush as :
 
 mail: anat@gmail.com
