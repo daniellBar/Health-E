@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { userService } from '../../services/userService.js';
 import { uploadImg } from '../../services/imgUploadService.js';
 import { signup } from '../../store/actions/userActions.js';
 

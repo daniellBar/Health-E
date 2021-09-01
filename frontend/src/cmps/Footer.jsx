@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 
 export function Footer() {
     return (
@@ -7,31 +6,25 @@ export function Footer() {
             <div className="footer-container">
 
                 <div className="foot-col">
-                <div className="bold"><p>ABOUT</p></div>
+                    <p className="bold">ABOUT</p>
                     <p>How Health-E works</p>
                     <p>Newsroom</p>
-                    <p>Health-E Plus</p>
-                    <p>Healthy for Work</p>
                     <p>Olympics</p>
                     <p>Careers</p>
                 </div>
 
                 <div className="foot-col">
-                    <div className="bold"><p>COMMUNITY</p></div>
+                    <p className="bold">COMMUNITY</p>
                     <p>Diversity Belonging</p>
-                    <p>Against Discrimination</p>
                     <p>Accessibility</p>
-                    <p>Frontline Stays</p>
                     <p>Invite friends</p>
                     <p>Gift cards</p>
                 </div>
                 <div className="foot-col">
-                    <div className="bold"><p>SUPPORT</p></div>
-                    <Link to ="/about">About</Link>
+                    <p className="bold">SUPPORT</p>
                     <p>Updates for COVID-19</p>
                     <p>Help Center</p>
                     <p>Cancellation options</p>
-                    <p>Neighborhood Support</p>
                     <p>Trust and Safety</p>
                 </div>
             </div>
