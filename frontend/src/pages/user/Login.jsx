@@ -78,12 +78,13 @@ class _Login extends Component {
     const { loggedInUser } = this.props;
     return (
       <div className="main-container">
-        <div className="just-row flex justify-center">
-          {(!loggedInUser) ? <h2 className="tac marg-top-50">
+        {!loggedInUser && <div className="flex justify-center align-center column">
+          <h2 className="tac marg-top-50">
             Login
-        </h2> : ''}
+        </h2>
+          <h2>{this.state.msg}</h2>
         </div>
-        <h2>{this.state.msg}</h2>
+        }
         {loggedInUser && (
           <div className="justify-self">
             <h2>Welcome: {loggedInUser.fullName} </h2>

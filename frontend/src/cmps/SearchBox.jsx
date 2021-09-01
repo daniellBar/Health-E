@@ -33,7 +33,7 @@ class _SearchBox extends Component {
         const field = target.name
         const value = target.value
         this.setState({ [field]: value }, () => {
-            if (this.props.location.pathname === "/") return
+            if (this.props.location.pathname !== "/activity") return
             this.setSearchParamsAndFilter()
         })
     }

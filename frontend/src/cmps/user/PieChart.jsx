@@ -76,22 +76,20 @@ class _PieChart extends Component {
                         responsive: false,
                         maintainAspectRatio: false,
                         pieceLabel: {
-                            render: '$' + 'value',
+                            render: 'precentage',
                             fontSize: 18,
                             fontStyle: 'bold',
                             fontColor: '#000',
                         },
                         legend: {
-                            display:true,
                             position: 'bottom',
                             margin:0,
                             fullWidth: true,
                             align: 'center',
-                            label: {
-                                font:{
+                            labels: {
                                 fontColor: "#024000",
                                 defaultFontSize: 18
-                                }
+                                
                             },
                             layout: {
                                 padding:{
