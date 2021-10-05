@@ -11,7 +11,7 @@ Backend is written with NodeJs, ExpersJs, Socket.IO, data is on MongoDB.
 please note:
 
 some of the features require login.
-best option in order to watch a user profile page with all its features is to login as an existing user ush as :
+best option in order to watch a user profile page with all its features is to login as an existing user such as :
 
 mail: anat@gmail.com
 
